@@ -5,7 +5,8 @@
   --item-bg: #f8f8f8;
   --accent: #008000; 
   --danger: #d00;
-
+  --completed-text: #000; 
+  --active-text: #000000; 
   max-width: 600px;
   margin: 0 auto;
   min-height: 100vh;
@@ -21,6 +22,8 @@
   --item-bg: #fff;
   --accent: #ff0; 
   --danger: #f00;
+  --completed-text: #000; 
+  --active-text: #000000; 
 }
 
 
@@ -85,7 +88,7 @@
   justify-content: space-between;
   align-items: center;
   background: var(--item-bg);
-  height: 80px;            
+  height: 80px;           
   padding: 0 1rem;
   border-radius: 4px;
   margin-bottom: 16px;
@@ -101,20 +104,32 @@
   gap: 16px;
   font-size: 1rem;
   cursor: pointer;
-
 }
 .label input[type="checkbox"] {
   width: 24px;
   height: 24px;
-  
 }
 
+
+.item.done .label span {
+  
+  opacity: 0.6;
+}
+
+
+.item.done .label span {
+  color: var(--completed-text);  
+}
+
+.item:not(.done) .label span {
+  color: var(--active-text); 
+}
 
 
 .delBtn {
   background: transparent;
   border: none;
-  font-size: 60px;       
+  font-size: 48px;       
   color: var(--danger);
   cursor: pointer;
   padding: 0;
